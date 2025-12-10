@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
+import 'package:meals/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealsItem extends StatelessWidget {
@@ -27,7 +28,13 @@ class MealsItem extends StatelessWidget {
               width: double.infinity,
             ),
             Column(
-              children: [Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 10,vertical: 115)),
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.symmetric(
+                    horizontal: 10,
+                    vertical: 115,
+                  ),
+                ),
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -49,7 +56,26 @@ class MealsItem extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        Row(children: []),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            MealItemTrait(
+                              icon: Icons.schedule,
+                              label: "${meal.duration} min",
+                            ),
+                            SizedBox(width: 12),
+                            MealItemTrait(
+                              icon: Icons.work,
+                              label: meal.complexity.name,
+                            ),
+                            SizedBox(width: 12),
+                            MealItemTrait(
+                              icon: Icons.attach_money,
+                              label: meal.affordability.name,
+                            ),
+                            // Text(meal.affordability.name,style: TextStyle(color: Colors.white),)
+                          ],
+                        ),
                       ],
                     ),
                   ),
