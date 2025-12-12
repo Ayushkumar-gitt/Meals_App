@@ -13,6 +13,7 @@ class MealsScreen extends StatelessWidget {
       itemCount: meals.length,
       itemBuilder: (ctx, index) => MealsItem(meal: meals[index]),
     );
+    
     if (meals.isEmpty) {
       content = Center(
         child: Column(
