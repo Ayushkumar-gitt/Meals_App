@@ -3,6 +3,7 @@ import 'package:meals/models/meal.dart';
 import 'package:meals/screens/Meals_Screen.dart';
 import 'package:meals/screens/categories_screen.dart';
 import 'package:meals/widgets/meals_item.dart';
+import 'package:meals/widgets/the_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -39,8 +40,9 @@ class _TabsScreenState extends State<TabsScreen> {
       activePageTitle = "Your Favourites";
     }
     return Scaffold(
-      // appBar: AppBar(title: Text(activePageTitle)),
+      appBar: AppBar(title: Text(activePageTitle)),
       body: activePage,
+      drawer: TheDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedPageIndex,
         onTap: selectPage,
