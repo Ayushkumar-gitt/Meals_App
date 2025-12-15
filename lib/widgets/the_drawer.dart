@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TheDrawer extends StatelessWidget {
-  const TheDrawer({super.key});
+  const TheDrawer({super.key, required this.onSelectScreen});
+
+  final void Function(String identifier) onSelectScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +23,20 @@ class TheDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.restaurant,size: 30,),
-            title: Text("Meals",style: TextStyle(fontSize: 22),),
+            leading: Icon(Icons.restaurant, size: 30),
+            title: Text("Meals", style: TextStyle(fontSize: 22)),
             textColor: Colors.white,
-            onTap: () {},
+            onTap: () {
+              onSelectScreen("meals");
+            },
           ),
           ListTile(
-            leading: Icon(Icons.settings,size: 30,),
-            title: Text("Filters",style: TextStyle(fontSize: 22),),
+            leading: Icon(Icons.settings, size: 30),
+            title: Text("Filters", style: TextStyle(fontSize: 22)),
             textColor: Colors.white,
-            onTap: () {},
+            onTap: () {
+              onSelectScreen("filters");
+            },
           ),
         ],
       ),
