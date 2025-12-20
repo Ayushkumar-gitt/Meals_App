@@ -76,12 +76,15 @@ class _TabsScreenState extends State<TabsScreen> {
       }
       return true;
     }).toList();
+
     var activePageTitle = "Categories";
     Widget activePage = Categories(availableMeals: availableMeals);
+    
     if (selectedPageIndex == 1) {
       activePage = MealsScreen(mealTitle: "Your Favourites", meals: []);
       activePageTitle = "Your Favourites";
     }
+
     return Scaffold(
       appBar: AppBar(title: Text(activePageTitle)),
       body: activePage,
