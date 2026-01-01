@@ -18,7 +18,6 @@ class _FiltersScreenState extends State<FiltersScreen> {
   var veganValue = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     glutenValue = widget.currentFilters[Filter.glutenFree]!;
     lactoseValue = widget.currentFilters[Filter.lactoseFree]!;
